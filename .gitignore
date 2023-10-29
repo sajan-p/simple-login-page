@@ -1,0 +1,33 @@
+# Dependency directories
+client/node_modules
+server/node_modules
+client/package-lock.json
+server/package-lock.json
+
+# Logs and debugging files
+npm-debug.log
+yarn-error.log
+debug.log
+debug
+logs
+*.log
+
+# Build files
+/build
+
+# Environment variables (store them in a .env file instead)
+server/.env
+
+# Editor or IDE-specific files
+.vscode
+.idea
+
+# User-specific settings or working files
+.DS_Store
+Thumbs.db
+
+# API keys and secrets
+.env.local
+.env.development
+.env.test
+.env.production
