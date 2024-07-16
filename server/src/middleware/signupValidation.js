@@ -13,8 +13,6 @@ const signupValidation = async (req, res, next) => {
     body("lastName").isLength({ min: 1 }).withMessage("This field is required"),
   ];
 
-  console.log("D");
-
   try {
     await Promise.all(validationRules.map((rule) => rule.run(req)));
 

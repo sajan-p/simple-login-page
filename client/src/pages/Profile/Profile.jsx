@@ -1,13 +1,17 @@
+import { useContext } from "react";
 import { ProfileContainer } from "./Profile.styles";
+import { ProfileProvider } from "./ProfileContext";
 import ProfileBody from "./components/ProfieBody/ProfileBody";
 import ProfileHeader from "./components/ProfileHeader/ProfileHeader";
 
 const Profile = () => {
   return (
-    <ProfileContainer>
-      <ProfileHeader />
-      <ProfileBody />
-    </ProfileContainer>
+    <ProfileProvider>
+      <ProfileContainer>
+        <ProfileHeader />
+        <ProfileBody />
+      </ProfileContainer>
+    </ProfileProvider>
   );
 };
 

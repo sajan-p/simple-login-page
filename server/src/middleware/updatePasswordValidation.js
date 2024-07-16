@@ -1,8 +1,13 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/user");
 
-const loginValidation = async (req, res, next) => {
-  const { email, password } = req.body;
+const updatePasswordValidation = async (req, res, next) => {
+  if (req.body.oldPassword == "") {
+    next();
+    return;
+  }
+
+  const { email, oldPassword } = req.body;
 
   try {
     const existingUser = await User.findOne({ email });
@@ -15,7 +20,7 @@ const loginValidation = async (req, res, next) => {
     }
 
     const isCorrectPassword = await bcrypt.compare(
-      password,
+      oldPassword,
       existingUser.password
     );
 
@@ -35,4 +40,4 @@ const loginValidation = async (req, res, next) => {
   }
 };
 
-module.exports = loginValidation;
+module.exports = updatePasswordValidation;

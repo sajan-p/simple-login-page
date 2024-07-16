@@ -24,8 +24,8 @@ const userSchema = new Schema({
     trim: true,
   },
   pfp: {
-    type: String,
-    required: true,
+    data: String,
+    contentType: String,
   },
 });
 

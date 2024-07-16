@@ -7,7 +7,13 @@ const ProfilePicture = (props) => {
 
   const imageStyle = props.rounded ? { borderRadius: "50%" } : {};
 
-  return <img src={profilePicture} width={props.width} style={imageStyle} />;
+  return (
+    <img
+      src={`data:${user.data.pfp.contentType};base64,${user.data.pfp.data}`}
+      width={props.width}
+      style={imageStyle}
+    />
+  );
 };
 
 export default ProfilePicture;

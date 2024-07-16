@@ -1,33 +1,28 @@
-import {
-  InputContainer,
-  InputText,
-  InputTextbox,
-  InputSubmit,
-} from "../../../../components/Input/Input";
+import PB, {
+  Container,
+  Delete,
+  DetailsContainer,
+  Submit,
+} from "./ProfileBody.styles";
+import { UserContext } from "../../../../context/user";
+import { useContext, useEffect } from "react";
+import { ProfileContext } from "./../../ProfileContext";
+import ProfileBodyImage from "./components/ProfileBodyImage/ProfileBodyImage";
+import ProfileBodyName from "./components/ProfileBodyName/ProfileBodyName";
+import ProfileBodyPassword from "./components/ProfileBodyPassword/ProfileBodyPassword";
 
 const ProfileBody = (props) => {
   return (
-    <div>
-      <InputContainer>
-        <InputText>Email</InputText>
-        <InputTextbox placeholder="Email address"></InputTextbox>
-      </InputContainer>
+    <Container>
+      <DetailsContainer>
+        <ProfileBodyImage />
+        <ProfileBodyName />
+        <ProfileBodyPassword />
+      </DetailsContainer>
 
-      <InputContainer>
-        <InputText>Email</InputText>
-        <InputTextbox placeholder="Email address"></InputTextbox>
-      </InputContainer>
-      <InputContainer>
-        <InputText>Password</InputText>
-        <InputTextbox placeholder="Password"></InputTextbox>
-        <p>Errors</p>
-      </InputContainer>
-
-      <div>
-        <InputSubmit onClick={props.handleSubmit}>Login to Name</InputSubmit>
-        <p>Errors</p>
-      </div>
-    </div>
+      <Submit type="submit">Save Information</Submit>
+      <Delete>Delete Account</Delete>
+    </Container>
   );
 };
 
